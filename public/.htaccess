@@ -1,0 +1,8 @@
+RewriteEngine On
+
+#Принять загрузку файлов и каталогов
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Отправить все остальное на страницу индекса
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
